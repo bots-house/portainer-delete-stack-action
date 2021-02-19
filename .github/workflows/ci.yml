@@ -13,28 +13,13 @@ jobs:
     runs-on: ubuntu-20.04
     steps:
       - uses: actions/checkout@v2
-      - uses: bots-house/portainer-delete-stack-action@master
-        with:
-          # url of Poratainer instance
-          portainer-url: ${{ secrets.CLUSTER_PORTAINER_URL }}
-
-          # portainer auth
-          portainer-username: ${{ secrets.CLUSTER_PORTAINER_USERNAME }}
-          portainer-password: ${{ secrets.CLUSTER_PORTAINER_PASSWORD }}
-          
-          # internal portainer cluster id
-          portainer-endpoint: 1
-          
-          # stack name
-          stack-name: whoami
-
-      # - name: Install Deps
-      #   run: npm ci 
-      # - name: Check Formatting 
-      #   run: npm run format-check
-      # - name: Lint
-      #   run: npm run lint
-      # - name: Try to build
-      #   run: |
-      #     npm run build 
-      #     npm run package
+      - name: Install Deps
+        run: npm ci 
+      - name: Check Formatting 
+        run: npm run format-check
+      - name: Lint
+        run: npm run lint
+      - name: Try to build
+        run: |
+          npm run build 
+          npm run package

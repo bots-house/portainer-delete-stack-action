@@ -1,11 +1,6 @@
-# portainer-deploy-stack-action
+# portainer-delete-stack-action
 
-Deploy your services to [Docker Swarm](https://docs.docker.com/engine/swarm/) cluster via [Portainer](https://www.portainer.io). 
-
-## Features
- - create stack if not exists, update if already exists
- - grant access to spicified teams
- - works via [Portainer API](https://documentation.portainer.io/archive/1.23.2/API/)
+Delete stack created by [bots-house/portainer-deploy-stack-action](https://github.com/bots-house/portainer-deploy-stack-action).
 
 ## Usage
 
@@ -23,7 +18,7 @@ jobs:
     runs-on: ubuntu-20.04
     steps:
       - uses: actions/checkout@v2
-      - uses: bots-house/portainer-delete-stack-action
+      - uses: bots-house/portainer-delete-stack-action@main
         with:
           # url of Poratainer instance
           portainer-url: ${{ secrets.PORTAINER_URL }}
