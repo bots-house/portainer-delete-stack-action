@@ -26,7 +26,7 @@ jobs:
           portainer-endpoint: 1
           
           # stack name
-          stack-name: flipt
+          stack-name: whoami
 
       # - name: Install Deps
       #   run: npm ci 
