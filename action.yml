@@ -1,0 +1,26 @@
+name: 'Portainer Delete Stack'
+description: 'Deleted provided stack via Portainer'
+inputs:
+  portainer-username:
+    description: Poratainer user name
+    required: true
+
+  portainer-password:
+    description: Portainer user password
+    required: true
+
+  portainer-url:
+    description: URL of Portainer instance
+    required: true
+
+  portainer-endpoint:
+    description: Swarm cluster ID in Portainer
+    required: true
+
+  stack-name: 
+    description: Docker Swarm stack name for delete
+    required: true
+
+runs:
+  using: 'node12'
+  main: 'dist/index.js'
